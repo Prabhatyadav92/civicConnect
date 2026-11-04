@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+  }
+  :focus-visible {
+    outline: 3px solid #1f5fa8;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-signal text-ink hover:bg-[#e0a800];
+  }
+  .btn-dark {
+    @apply btn bg-ink text-white hover:bg-[#0d1730];
+  }
+  .btn-quiet {
+    @apply btn border border-line bg-white text-ink hover:bg-paper;
+  }
+  .field {
+    @apply w-full rounded-md border border-line bg-white px-3 py-2.5 text-sm text-ink placeholder:text-steel/70 focus:border-ink;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-semibold text-ink;
+  }
+  .hint {
+    @apply mt-1 text-xs text-steel;
+  }
+}
+
+/* The status tracker borrows the centre line of a road. */
+.road {
+  height: 4px;
+  background-image: repeating-linear-gradient(90deg, var(--road, #d5dbe3) 0 12px, transparent 12px 20px);
+}
+
+/* Map pin */
+.cc-pin span {
+  display: block;
+  width: 26px;
+  height: 26px;
+  background: #f5b800;
+  border: 3px solid #14213d;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+}
+.leaflet-container {
+  font-family: inherit;
+}
