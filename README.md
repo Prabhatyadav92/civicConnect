@@ -1,9 +1,9 @@
-# CivicConnect: first 30 days
+# CivicConnect: until nov.
 
-This is the build for Phases 1 and 2 of the 90-day plan: a citizen can report an
+This is the build for Phases 1 and 2 of the 120-day plan: a citizen can report an
 issue with photos, video and a map location, and a department official can see it,
 review it and move it through to resolution. Issue categories are chosen by the
-citizen for now. AI classification starts in Phase 3 (day 31).
+citizen for now. AI classification starts in Phase 3 .
 
 ## What works
 
