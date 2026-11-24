@@ -8,6 +8,8 @@ const userSchema = new mongoose.Schema(
     passwordHash: { type: String, required: true, select: false },
     role: { type: String, enum: ROLES, default: 'citizen' },
     department: { type: mongoose.Schema.Types.ObjectId, ref: 'Department', default: null },
+    resetTokenHash: { type: String, select: false },
+    resetTokenExpires: { type: Date, select: false },
   },
   { timestamps: true }
 );
@@ -15,6 +17,8 @@ const userSchema = new mongoose.Schema(
 userSchema.set('toJSON', {
   transform: (_doc, ret) => {
     delete ret.passwordHash;
+    delete ret.resetTokenHash;
+    delete ret.resetTokenExpires;
     delete ret.__v;
     return ret;
   },

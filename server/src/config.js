@@ -15,4 +15,12 @@ export const config = {
   jwtExpiresIn: '7d',
   clientOrigin: process.env.CLIENT_ORIGIN || 'http://localhost:5173',
   uploadDir: path.resolve(process.env.UPLOAD_DIR || 'uploads'),
+    // Optional. Without SMTP_HOST, reset links are printed in the server terminal (development only).
+  smtp: {
+    host: process.env.SMTP_HOST || '',
+    port: Number(process.env.SMTP_PORT) || 587,
+    user: process.env.SMTP_USER || '',
+    pass: process.env.SMTP_PASS || '',
+    from: process.env.MAIL_FROM || 'CivicConnect <no-reply@civicconnect.local>',
+  },
 };
